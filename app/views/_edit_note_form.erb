@@ -1,0 +1,6 @@
+<form action = "/edit/note/<%= @current_note[:id] %>" method='post'>
+	<input name="_method" value="put" type="hidden"/>
+	<input type='text' name='edit_note_data[title]' value='<%= @current_note[:title] %>' required><br><br>
+	<input type='text' name='edit_note_data[content]' value='<%= @current_note[:content]%>' rows='8' required><br><br>
+	<input type='submit' value='Save'>
+</form>

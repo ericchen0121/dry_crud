@@ -1,0 +1,16 @@
+<% @all_notes.each do |note| %>
+	<h2><%= note[:title] %></h2>
+
+	<div class="note_content">
+		<p><%= note[:content] %></p>
+	</div>
+
+	<a href="/edit/note/<%= note[:id] %>" >Edit</a> 
+	<!-- <a href="/delete/note/<%= note[:id] %>">Delete</a> -->
+
+	<form method="post" action="/delete/note/<%= note[:id]%>">
+		<input name = '_method' type='hidden' value="delete">
+		<input type='submit' value='Delete'>
+	</form>
+	<br>-------//--------
+<% end %>
